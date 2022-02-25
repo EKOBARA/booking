@@ -1,7 +1,9 @@
 import React from 'react';
+import Navbar from './components/navBar/Navbar'
 import Slider from './components/Slider';
 
 import './app.css';
+
 
 const App = () => {
     return (
@@ -9,6 +11,7 @@ const App = () => {
             <Slider />
         
             {/* navbar */}
+            <Navbar />
             {/* carousel */}
                 {/* date selecter */}
             
