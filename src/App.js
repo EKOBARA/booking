@@ -1,10 +1,13 @@
 import React from 'react';
+import Slider from './components/Slider';
 
-import './css';
+import './app.css';
 
 const App = () => {
     return (
         <div>
+            <Slider />
+        
             {/* navbar */}
             {/* carousel */}
                 {/* date selecter */}
