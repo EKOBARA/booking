@@ -12,8 +12,8 @@ const Footer = () => {
             variant='h4'
             level={5}
             style={{ color: 'white', textAlign: 'center' }}>
-            ____ Properties <br />
-            All Rights Reserved
+            © 2022 ___ Properties! All rights reserved - this is a demo!
+            <br />
           </Typography>
           <Grid>
             <Link to='/home'>Home</Link>
