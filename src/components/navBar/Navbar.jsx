@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Container, Box, AppBar, Toolbar, Typography, Link, Button} from '@mui/material';
+import Search from '../Home/Search/Search';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
@@ -7,8 +8,6 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 
 
 function Navbar() {
-
-    // const classes = useStyles();
 
     return (
         <>

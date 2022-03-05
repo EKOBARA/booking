@@ -7,7 +7,7 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <Container className='footer'>
+        <footer className='footer'>
           <Typography
             variant='h4'
             level={5}
@@ -20,7 +20,7 @@ const Footer = () => {
             <Link to='/exchanges'>Exchanges</Link>
             <Link to='/news'>News</Link>
           </Grid>
-        </Container>
+        </footer>
       
     );
 };
