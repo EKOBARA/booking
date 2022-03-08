@@ -1,46 +1,33 @@
 import React, { useState } from 'react';
-import { Container } from '@mui/material'
-import SliderBTN from './SliderBTN';
-
-import './slider.css';
-
-const images = [
-    'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg', 
-    'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg', 
-    'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg', 'https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__340.jpg'
-]
+import Carousel from 'react-bootstrap/Carousel';
+import data from './data.json';
 
 
 const Slider = () => {
-    const [idx, setIdx] = useState(1);
-
-    const nextSlide = () => {
-        if (idx !== images.length) {
-            setIdx(idx + 1);
-        } else {
-            setIdx(1);
-        }
-    }
-
-    const prevSlide = () => {
-        if (idx !== 1) {
-            setIdx(idx - 1);
-        } else {
-            setIdx(images.length);
-        }
-    }
-    return (
-        <Container className='container-slider'>
-            {images.map((pic, i) => (
-                <div key={i} className={idx === i + 1 ? "slide active-anim" : "slide"}>                        
-                    <img src={pic} alt='' />
-                </div>
-            ))}
-
-            <SliderBTN moveSlide={nextSlide} direction="next" />
-            <SliderBTN moveSlide={prevSlide} direction="prev" />
-        </Container>
-    )
-}
+	return (
+		<Carousel style={{ minHeight: '90vh' }}>
+			{data.map((item) => {
+				return (
+					<Carousel.Item key={item.id} style={{ maxHeight: '90vh' }}>
+						<img
+							className='d-block w-100'
+							style={{
+								height: '90vh',
+								width: '100%',
+								objectFit: 'cover',
+								overflow: 'hidden',
+							}}
+							src={item.webImage.url}
+							alt={item.title}
+						/>
+						<Carousel.Caption>
+							<p>{item.longTitle}</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				);
+			})}
+		</Carousel>
+	);
+};
 
 export default Slider;
