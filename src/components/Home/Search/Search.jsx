@@ -15,6 +15,7 @@ const style = {
     width: 400,
     bgcolor: 'background.paper',
     border: '2px solid #000',
+    borderRadius: '7px',
     boxShadow: 24,
     p: 4,
 };
@@ -40,36 +41,43 @@ const Search = () => {
 
     return (
         <div>
-        <Button onClick={handleOpen}>Open modal</Button>
-        <Modal
-            aria-labelledby="transition-modal-title"
-            aria-describedby="transition-modal-description"
-            open={open}
-            onClose={handleClose}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-                timeout: 500,
-            }}
-            >
-            <Fade in={open}>
-            <Box sx={style}>
+            <Button 
+                variant='contained' 
+                
+                disableElevation={false}
+                disableFocusRipple={false} 
+                onClick={handleOpen} >
+                Select Dates
+            </Button>
+            <Modal
+                aria-labelledby="transition-modal-title"
+                aria-describedby="transition-modal-description"
+                open={open}
+                onClose={handleClose}
+                closeAfterTransition
+                BackdropComponent={Backdrop}
+                BackdropProps={{
+                    timeout: 500,
+                }}
+                >
+                <Fade in={open}>
+                    <Box sx={style}>
 
-                <DateRangePicker 
-                    editableDateInputs={true}
-                    onChange={handleChange} className='dates'
-                    moveRangeOnFirstSelection={false}
-                    ranges={[selectionRange]} 
-                />
-                <Typography variant='p'>
-                    Number of guests <People />
-                </Typography>
-                <input min={0} defaultValue={2} type="number" />
-                <Button>Search Airbnb</Button>
-                <Button onClick={handleClose}>Hide</Button>
-            </Box>
-            </Fade>
-        </Modal>
+                        <DateRangePicker 
+                            editableDateInputs={true}
+                            onChange={handleChange} className='dates'
+                            moveRangeOnFirstSelection={false}
+                            ranges={[selectionRange]} 
+                        />
+                        <Typography variant='p'>
+                            Number of guests <People />
+                        </Typography>
+                        <input min={0} defaultValue={2} type="number" />
+                        <Button>Search Airbnb</Button>
+                        <Button onClick={handleClose}>Hide</Button>
+                    </Box>
+                </Fade>
+            </Modal>
         </div>
     );
 }
