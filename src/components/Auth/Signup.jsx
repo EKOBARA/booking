@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Form, Button, Container, Alert } from 'react-bootstrap';
-import { useAuth } from './AuthContext';
+import { signup } from '../../firebase';
 
 const Signup = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const confirmPassRef = useRef();
-    const { signup } = useAuth();
+    // const { signup } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -54,7 +54,7 @@ const Signup = () => {
                     </Card.Body>                    
                 </Card>
                 <div className='w-100' text-center='true' mt-2='true'>
-                    Already have an account? 
+                    Already have an account? <Link to='/login'>Log In</Link>
                 </div>
             </div>
         </Container>
